@@ -1,0 +1,13 @@
+name: Test deploy
+on:
+  push:
+    branches: [ master, git-annex, tests]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  deploy_linux:
+    uses: courtois-neuromod/actions-datasets/.github/workflows/deploy.yml@main
+    with:
+      name: Templateflow Bot
+      email: nipreps@gmail.com
